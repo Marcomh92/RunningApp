@@ -75,10 +75,12 @@ class TrackingService : LifecycleService() {
                         Timber.d("Starting service")
                     } else {
                         Timber.d("Resuming service")
+                        startForegroundService()
                     }
                 }
                 ACTION_PAUSE_SERVICE -> {
                     Timber.d("Paused service")
+                    pauseService()
                 }
                 ACTION_STOP_SERVICE -> {
                     Timber.d("Stopped service")
@@ -88,10 +90,14 @@ class TrackingService : LifecycleService() {
         return super.onStartCommand(intent, flags, startId)
     }
 
+    private fun pauseService() {
+        isTracking.postValue(false)
+    }
+
     @SuppressLint("MissingPermission")
     private fun updateLocationTracking(isTracking: Boolean) {
         if(isTracking) {
-            if(TrackingUtility.hasLocationPermissions(this)) {
+            if(/*TrackingUtility.hasLocationPermissions(this)*/true) {
                 val request = LocationRequest.Builder(
                     PRIORITY_HIGH_ACCURACY,
                     LOCATION_UPDATE_INTERVAL

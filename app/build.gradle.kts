@@ -109,7 +109,12 @@ dependencies {
     ksp(libs.hilt.compiler)
 
     //Easy Permissions
-    implementation(libs.easypermissions)
+    //implementation(libs.easypermissions)
+    //implementation("com.vmadalin:easypermissions-ktx:1.0.0")
+
+    //KPermissions
+    implementation("com.github.fondesa:kpermissions:3.5.0")
+    implementation("com.github.fondesa:kpermissions-coroutines:3.5.0")
 
     // MPAndroidChart - Line chart
     implementation(libs.mpandroidchart)
