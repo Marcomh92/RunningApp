@@ -1,6 +1,5 @@
 package com.marcohuijskes.runningapp.other
 
-import androidx.compose.ui.graphics.Color
 import com.marcohuijskes.runningapp.R
 
 object Constants {
@@ -13,6 +12,8 @@ object Constants {
     const val ACTION_STOP_SERVICE = "ACTION_STOP_SERVICE"
     const val ACTION_SHOW_TRACKING_FRAGMENT = "ACTION_SHOW_TRACKING_FRAGMENT"
     const val REQUEST_CHECK_SETTINGS = 1001 // Define request code
+
+    const val TIMER_UPDATE_INTERVAL = 50L
 
     const val LOCATION_UPDATE_INTERVAL = 5000L
     const val FASTEST_LOCATION_INTERVAL = 2000L
